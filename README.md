@@ -47,15 +47,15 @@ To connect to SharePoint, it's better to have an **Azure app registration** with
 ~~~json
 {
     "OutputDir": "C:/Temp",
-	"Sep" : ";",
-	"ListUrl": "SitePages",
-	"WebPartIdCsv": "WebPartId.csv",
-	"ClientId" : "guid-of-your-app-registration or empty",
-	"TenantSiteUrl": "https://your-tenant-admin.sharepoint.com/",
-	"CertThumb": "your-pfx-thumbprint or empty",
-	"PfxPath": "C:/Temp/your-pfx.pfx or empty",
-	"PfxPwd": "your-pfx-password or empty",
-	"TenantName": "your-tenant.onmicrosoft.com"
+    "Sep" : ";",
+    "ListUrl": "SitePages",
+    "WebPartIdCsv": "WebPartId.csv",
+    "ClientId" : "guid-of-your-app-registration or empty",
+    "TenantSiteUrl": "https://your-tenant-admin.sharepoint.com/",
+    "CertThumb": "your-pfx-thumbprint or empty",
+    "PfxPath": "C:/Temp/your-pfx.pfx or empty",
+    "PfxPwd": "your-pfx-password or empty",
+    "TenantName": "your-tenant.onmicrosoft.com"
 }
 ~~~
 $~$
