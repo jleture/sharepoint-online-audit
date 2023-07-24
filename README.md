@@ -1,8 +1,6 @@
 # sharepoint-online-audit
 PowerShell scripts to audit SharePoint Online sites
 
-$~$
-
 ## Files
 | File | Role |
 | - | - |
@@ -11,8 +9,7 @@ $~$
 | **WebPartId.csv** | List of SharePoint modern webparts with Name and GUID |
 | **GetSharePointWebParts.ps1** | Script to get webpart used in SharePoint sites |
 | **SetDisabledWebPartIds.ps1** | Script to disable SharePoint webparts |
-
-$~$
+| **GetSearchManagedProperties.ps1** | Script to get search managed properties |
 
 ## Prerequisities
 
@@ -28,8 +25,6 @@ If not, you can install the latest version:
 ~~~powershell
 Install-Module PnP.PowerShell 
 ~~~
-
-$~$
 
 ## Configuration
 
@@ -58,7 +53,6 @@ To connect to SharePoint, it's better to have an **Azure app registration** with
     "TenantName": "your-tenant.onmicrosoft.com"
 }
 ~~~
-$~$
 
 ## Disable webparts
 
@@ -79,8 +73,6 @@ You can add `-Verbose` to display more information in the terminal.
 By design, **only Kindle/YouTube/Twitter/ContentEmbed/VideoEmbed/MicrosoftBookings web parts can be disabled**.
 If you try to disable other webpart, such as Office 365 Connectors, you will have an error!
 
-$~$
-
 ## Export webparts
 
 The script has three steps:
@@ -100,4 +92,25 @@ You can add `-Verbose` to display more information in the terminal.
 
 ~~~powershell
 .\GetSharePointWebParts.ps1 -Env LAB -Verbose
+~~~
+
+## Get search managed properties
+
+The script returns the search managed properties configured at the tenant level.
+
+The result is an array:
+
+| Name | Aliases | Mappings | Type |
+| - | - | - | - |
+| RefinableString01 | {Originator} | {ows_Originator} | Text |
+| RefinableString02 | {} | {ows_TeamType} | Text |
+
+~~~powershell
+.\GetSearchManagedProperties.ps1 -Env LAB
+~~~
+
+You can add `-Verbose` to display more information in the terminal.
+
+~~~powershell
+.\GetSearchManagedProperties.ps1 -Env LAB -Verbose
 ~~~

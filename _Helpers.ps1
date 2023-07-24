@@ -25,6 +25,16 @@ Function Invoke-Start($scriptName, $currentDir) {
     }
     catch {
     }
+
+    if ($PSCmdlet.MyInvocation.BoundParameters["Verbose"]) {
+        Write-Host "Set-PnPTraceLog On Debug" -NoNewline:$True
+        Set-PnPTraceLog -On -Level Debug
+    }
+    else {
+        Write-Host "Set-PnPTraceLog Off" -NoNewline:$True
+        Set-PnPTraceLog -Off
+    }
+    Write-Host " [OK]" -ForegroundColor Green
 }
 
 Function Invoke-Stop() {
